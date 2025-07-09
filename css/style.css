@@ -183,16 +183,16 @@ p {
 .text-block h3:not(:last-child), .text-block p:not(:last-child), .text-block ul:not(:last-child) {
   margin-bottom: 0.625rem;
 }
+.text-block > picture:not(:first-child) {
+  margin-top: 0.9375rem;
+}
+.text-block > picture:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
 .text-block > picture img {
   border-radius: 0.5rem;
   width: 100%;
   max-width: 50rem;
-}
-.text-block > picture img:not(:first-child) {
-  margin-top: 0.9375rem;
-}
-.text-block > picture img:not(:last-child) {
-  margin-bottom: 1.25rem;
 }
 .text-block table:not(:first-child) {
   margin-top: 1.5625rem;

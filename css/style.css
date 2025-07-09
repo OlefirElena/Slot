@@ -183,10 +183,10 @@ p {
 .text-block h3:not(:last-child), .text-block p:not(:last-child), .text-block ul:not(:last-child) {
   margin-bottom: 0.625rem;
 }
-.text-block > picture:not(:first-child) {
+.text-block > picture:not(:first-child) img {
   margin-top: 0.9375rem;
 }
-.text-block > picture:not(:last-child) {
+.text-block > picture:not(:last-child) img {
   margin-bottom: 1.25rem;
 }
 .text-block > picture img {

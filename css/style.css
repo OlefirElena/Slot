@@ -183,14 +183,15 @@ p {
 .text-block h3:not(:last-child), .text-block p:not(:last-child), .text-block ul:not(:last-child) {
   margin-bottom: 0.625rem;
 }
-.text-block picture img {
+.text-block > picture img {
+  border-radius: 0.5rem;
   width: 100%;
   max-width: 50rem;
 }
-.text-block picture img:not(:first-child) {
+.text-block > picture img:not(:first-child) {
   margin-top: 0.9375rem;
 }
-.text-block picture img:not(:last-child) {
+.text-block > picture img:not(:last-child) {
   margin-bottom: 1.25rem;
 }
 .text-block table:not(:first-child) {
@@ -806,9 +807,6 @@ p {
   }
 }
 @media (max-width: 20em){
-  .text-block picture img {
-    border-radius: 0.3125rem;
-  }
   .page__wrapper {
     gap: 1.875rem;
   }
@@ -863,9 +861,6 @@ p {
   }
 }
 @media (min-width: 20em) and (max-width: 75em){
-  .text-block picture img {
-    border-radius: clamp( 0.3125rem , 0.1988636363625rem  +  0.5681818182vw , 0.625rem );
-  }
   .page__wrapper {
     gap: clamp( 1.875rem , 1.647727272725rem  +  1.1363636364vw , 2.5rem );
   }
@@ -961,9 +956,6 @@ p {
   }
 }
 @media (min-width: 75em){
-  .text-block picture img {
-    border-radius: 0.625rem;
-  }
   .page__wrapper {
     gap: 2.5rem;
   }

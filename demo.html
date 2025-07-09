@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Book of ra Demo</title>
+		<style>@import url(https://fonts.googleapis.com/css?family=Poppins:regular,600);*{border:0;margin:0;padding:0}*,:after,:before{box-sizing:border-box}:after,:before{display:inline-block}body,html{height:100%}body{line-height:1;scrollbar-gutter:stable;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}button{background-color:transparent;color:inherit;font-family:inherit;font-size:inherit;line-height:inherit}a{color:inherit;display:inline-block;text-decoration:none}ul li{list-style:none}img{height:auto;max-width:100%;vertical-align:middle}h1,h2,h3,h4{font-size:inherit;font-weight:inherit}@font-face{font-display:swap;font-family:iconfont;src:url(assets/fonts/iconfont.woff2?5c5f4035a1bd4807e8d910f402ceccde) format("woff2")}[class*="--icon-"]:before{font-family:iconfont}[class*="--icon-play"]:before{content:"\f104"}[class*="--icon-percent-solid"]:before{content:"\f105"}[class*="--icon-money"]:before{content:"\f106"}[class*="--icon-hat"]:before{content:"\f108"}[class*="--icon-grid"]:before{content:"\f109"}[class*="--icon-code"]:before{content:"\f10b"}[class*="--icon-chart"]:before{content:"\f10d"}[class*="--icon-calendar-2"]:before{content:"\f10e"}[class*="--icon-border"]:before{content:"\f10f"}body{background:#313059;color:#fff;font-family:Poppins,sans-serif;font-size:1rem;min-width:20rem}.wrapper{display:flex;flex-direction:column;min-height:100%;overflow:clip}.wrapper>main{flex:1 1 auto}.wrapper>*{min-width:0}[class*=__container]{margin:0 auto;max-width:75rem;padding-left:.9375rem;padding-right:.9375rem}h1,h2,h3,h4{font-weight:600}h1{font-size:2.25rem}h2{font-size:1.75rem}h3{font-size:1.25rem}h4{font-size:1.125rem}p{line-height:1.6}.text-block h2{color:#e67400}.text-block h2:not(:last-child){margin-bottom:.9375rem}.text-block h3{color:#e2ad76}.text-block h3:not(:last-child),.text-block p:not(:last-child){margin-bottom:.625rem}.last-updated{align-items:center;border-bottom:.0625rem solid #4b4975;display:flex;font-size:.875rem;gap:.3125rem;padding-bottom:.625rem}.page__content,.page__wrapper{display:grid}.slot-card{background-color:#4b4975;border-radius:.5rem;box-shadow:0 .25rem .25rem 0 rgba(0,0,0,.25);display:flex;flex-direction:column;gap:1.25rem;padding:.9375rem}.slot-card__head>:not(:last-child){margin-bottom:.625rem}.slot-card__title{color:#e67400}.slot-card__image{aspect-ratio:300/300;border-radius:.5rem;overflow:hidden}.slot-card__image img{height:100%;object-fit:cover;width:100%}.slot-card__actions>:not(:last-child){margin-bottom:.9375rem}.slot-card__button{width:100%}.rating{align-items:center;display:flex;gap:.5rem}.rating__label{font-size:.875rem}.rating__stars{color:#ccc;display:inline-block;font-family:iconfont;position:relative}.rating__stars:before{content:"\f102\f102\f102\f102\f102";display:block}.rating__stars:after{color:gold;content:"\f102\f102\f102\f102\f102";left:0;overflow:hidden;position:absolute;top:0;white-space:nowrap;width:calc(var(--rate,0)*20%)}.slot-details{background-color:#4b4975;border-radius:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;padding:.9375rem}.slot-details__col{flex:1 1 0;margin-block:-.625rem;width:auto}.slot-details__item{border-bottom:.0625rem solid rgba(255,218,180,.349);display:flex;gap:.625rem;justify-content:space-between;line-height:1.5;padding-block:.625rem}.slot-details__item-icon{color:#e67400}.slot-details__item-type{color:#ffdab4;flex:1 1 0}.slot-details__item-value{text-align:right}.slot-details__item-value a{text-decoration:underline}.casinos__body{display:grid;gap:.625rem}.casino{background:#4b4975;box-shadow:0 .25rem .25rem 0 rgba(0,0,0,.25)}.casino__body{align-items:center;display:flex;flex-direction:column;flex-wrap:wrap}.casino__brand{display:grid;flex:0 1 15%;gap:.5rem;min-width:8.75rem;text-align:center}.casino__logo{aspect-ratio:400/250;border-radius:.375rem;max-width:25rem;overflow:hidden;position:relative}.casino__logo-img{height:100%;left:0;object-fit:cover;object-position:center;position:absolute;top:0;width:100%}.casino__title{font-size:1rem}.casino__title-link{font-size:.875rem;font-weight:400;text-decoration:none}.casino__bonus{flex:1 1 18%;font-weight:600;line-height:1.3;text-align:center}.casino__bonus-desc{color:#989898;font-size:.75rem;line-height:1.4;padding:0 .625rem .625rem;text-align:center}.casino__actions{display:grid;gap:.75rem;text-align:center}.casino__link{color:#c1c1c1;font-size:.9375rem}.spollers__body{line-height:1.5;padding-top:.9375rem}.menu{flex-grow:1}.menu__list{display:flex;flex-wrap:wrap;gap:.3125rem 1.25rem}.menu__link{font-weight:600;line-height:1.5}.menu__link--active{color:#ffb639}.icon-menu{display:none}.header{background-color:#4b4975;left:0;position:sticky;right:0;top:0;z-index:5}.header__body{align-items:center;display:flex;justify-content:space-between;min-height:4.25rem;padding-block:.75rem}.header__logo{max-width:12.5rem}.button{background-color:#e67400;border-radius:.375rem;box-shadow:0 .25rem .25rem 0 rgba(0,0,0,.25);display:inline-flex;font-weight:600;justify-content:center;letter-spacing:.0625rem;min-width:max-content;padding-block:.875rem;padding-inline:1.5rem;text-align:center;text-transform:uppercase}.button--primary{background-color:#e67400}.button--secondary{background-color:#01a45a}.game-preview{background-color:#000;border-radius:.625rem;margin:auto;overflow:hidden;position:relative;width:100%}.game-preview__img{display:block;filter:brightness(.7);width:100%}.game-preview__overlay{align-items:center;background-color:rgba(0,0,0,.5);color:#fff;display:flex;flex-direction:column;inset:0;justify-content:center;padding:1.25rem;position:absolute;text-align:center;z-index:2}.game-preview__button{background-color:#e67400;border:none;border-radius:50%;color:#fff;font-size:1.125rem;height:3.75rem;padding:.75rem 1.5rem;width:3.75rem}.game-preview__note{font-size:.9rem;margin-top:.75rem;opacity:.8}.game-preview__iframe-wrap{background:#000;display:none;left:0;position:absolute;top:0;inset:0;z-index:3}.game-preview__iframe-wrap iframe{border:none;height:100%;width:100%}@media (max-width:47.99875em){.slot-details{flex-direction:column}.slot-details__col:last-child .slot-details__item:last-child{border-bottom:none}.menu__body{background-color:#313059;display:flex;flex-direction:column;gap:2.5rem;height:calc(100% - 4.25rem);justify-content:space-between;left:-100%;overflow:auto;padding:.9375rem;position:fixed;top:4.25rem;width:100%}.menu__list{flex-direction:column}.menu__link{font-size:1.5rem}.icon-menu{display:block;height:1.125rem;position:relative;width:1.875rem;z-index:5}.icon-menu span,.icon-menu:after,.icon-menu:before{background-color:#fff;content:"";height:.125rem;position:absolute;right:0;width:100%}.icon-menu:before{top:0}.icon-menu:after{bottom:0}.icon-menu span{top:calc(50% - .0625rem)}}@media (max-width:29.99875em){.slot-card{align-items:center;text-align:center}.slot-card__rating{justify-content:center}.slot-card__actions{width:100%}.menu__body{flex-direction:column-reverse}}@media (max-width:20em){.page__wrapper{gap:1.875rem;padding-block:1.25rem}.page__content{gap:1.875rem}.slot-card__image{max-width:15rem}.casino{border-radius:.375rem}.casino__body{gap:.9375rem;padding:.9375rem}.casino__bonus{font-size:1.125rem}.header__body{gap:.375rem}.header__logo{max-height:3.125rem}}@media (min-width:29.99875em) and (max-width:61.99875em) and (min-width:75em){.slot-card{gap:2.5rem}}@media (min-width:29.99875em) and (max-width:61.99875em) and (min-width:20em) and (max-width:75em){.slot-card{gap:clamp(.625rem,-.05681818181875rem + 3.4090909091vw,2.5rem)}}@media (min-width:20em) and (max-width:75em){.page__wrapper{gap:clamp(1.875rem,1.647727272725rem + 1.1363636364vw,2.5rem);padding-block:clamp(1.25rem,.79545454545625rem + 2.2727272727vw,2.5rem)}.page__content{gap:clamp(1.875rem,1.7613636363625rem + .5681818182vw,2.1875rem)}.slot-card__image{max-width:clamp(15rem,13.6363636363625rem + 6.8181818182vw,18.75rem)}.casino{border-radius:clamp(.375rem,.32954545454375rem + .2272727273vw,.5rem)}.casino__body{gap:clamp(.9375rem,.59659090909375rem + 1.7045454545vw,1.875rem);padding:clamp(.9375rem,.8238636363625rem + .5681818182vw,1.25rem)}.casino__bonus{font-size:clamp(1.125rem,1.03409090909375rem + .4545454545vw,1.375rem)}.header__body{gap:clamp(.375rem,-.21590909090625rem + 2.9545454545vw,2rem)}.header__logo{max-height:clamp(3.125rem,2.897727272725rem + 1.1363636364vw,3.75rem)}}@media (min-width:29.99875em) and (max-width:61.99875em) and (max-width:20em){.slot-card{gap:.625rem}}@media (min-width:29.99875em) and (max-width:61.99875em){.slot-card{flex-direction:row;justify-content:space-between}.slot-card__head{display:flex;flex:1;flex-direction:column;justify-content:space-evenly}}@media (min-width:29.99875em){.casino__body{flex-direction:row;justify-content:center}}@media (min-width:47.99875em){.slot-details__item:last-child{border-bottom:none}}@media (min-width:61.99875em) and (min-width:75em){.slot-card{top:5.1875rem}}@media (min-width:61.99875em) and (min-width:20em) and (max-width:75em){.slot-card{top:clamp(5.1875rem,6.29545454545625rem + -1.4772727273vw,6rem)}}@media (min-width:61.99875em) and (max-width:20em){.slot-card{top:6rem}}@media (min-width:61.99875em){.page__wrapper{grid-template-columns:18.75rem 1fr}.slot-card{position:sticky}}@media (min-width:75em){.page__wrapper{gap:2.5rem;padding-block:2.5rem}.page__content{gap:2.1875rem}.slot-card__image{max-width:18.75rem}.casino{border-radius:.5rem}.casino__body{gap:1.875rem;padding:1.25rem}.casino__bonus{font-size:1.375rem}.header__body{gap:2rem}.header__logo{max-height:3.75rem}}</style>
+		<script type="module" crossorigin="" src="./js/demo.min.js?v=1752068514739"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/custom.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/style.min.css?v=1752068514739" media="print" onload="this.media='all'">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<div class="header__body">
+						<a href="index.html" class="header__link-logo">
+							<picture>
+								<img class="header__logo" alt="logo" src="./assets/img/logo.webp">
+							</picture>
+						</a>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="demo.html" class="menu__link menu__link--active">Demo</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">Provider</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<form action="#" target="_blank" data-fls-dynamic=".menu__body,479.98,0">
+							<button class="header__button button button--primary" data-fls-button="" type="submit">Play now</button>
+						</form>
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<main class="page page--demo">
+				<div class="page__container">
+					<div class="page__wrapper">
+						<div class="page__left">
+							<section class="page__slot-card slot-card">
+								<div class="slot-card__head">
+									<h1 class="slot-card__title">Book of Ra Deluxe</h1>
+									<div class="slot-card__rating rating">
+										<span class="rating__label">Rating:</span>
+										<div class="rating__stars" data-rate="4.5"></div>
+										<span class="rating__value"></span>
+									</div>
+								</div>
+								<div class="slot-card__image">
+									<img src="./assets/img/book%20of%20ra.jpg" alt="Book of ra">
+								</div>
+								<div class="slot-card__actions" data-fls-dynamic=".slot-card__head, 479.98-991.98, last">
+									<form action="#" target="_blank">
+										<button class="slot-card__button button button--primary" data-fls-button="" type="submit">Play real money</button>
+									</form>
+									<a class="slot-card__button button button--secondary" data-fls-button="" href="demo.html">Play demo</a>
+								</div>
+							</section>
+						</div>
+						<div class="page__right">
+							<div class="page__content">
+								<div class="game-preview">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/screenshot_1-600.webp" type="image/webp">
+										<img alt="demo" class="game-preview__img" src="./assets/img/screenshot_1.webp">
+									</picture>
+									<div class="game-preview__overlay">
+										<button class="game-preview__button --icon-play" onclick="showIframe()"></button>
+										<div class="game-preview__note">Play responible 18+</div>
+									</div>
+									<div class="game-preview__iframe-wrap" id="gameIframeWrap">
+										<iframe src="https://nrgs-b2b.greentube.com/Nrgs/B2B/Adapter/UnibetIframe/v1/games/launch/game?channel=Desktop&gameID=110&useRealmoney=false&lang=hr&region=MT" loading="lazy" frameborder="0" allowfullscreen></iframe>
+									</div>
+								</div>
+								<div class="text-block">
+									<h2>Innovative Tech Approaches</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+							mollit anim id est laborum.
+									</p>
+									<section class="casinos">
+										<div class="casinos__body">
+											<div class="casino" data-fls-casino="">
+												<div class="casino__body">
+													<div class="casino__brand">
+														<a class="casino__logo" href="#">
+															<picture>
+																<img class="casino__logo-img" alt="20bet" src="./assets/img/casinos/20bet.webp">
+															</picture>
+														</a>
+														<h4 class="casino__title">
+															<a class="casino__title-link" href="#">20bet</a>
+														</h4>
+													</div>
+													<div class="casino__bonus">$1,500 + 300 Free Spins</div>
+													<div class="casino__rating rating">
+														<!-- <span class="rating__label">Rating:</span> -->
+														<div class="rating__stars" data-rate="4.5"></div>
+														<span class="rating__value"></span>
+													</div>
+													<div class="casino__actions">
+														<form action="#" target="_blank">
+															<button class="casino__btn casino__btn--visit button button--primary" data-fls-button="" type="submit">Get bonus</button>
+														</form>
+														<a class="casino__link" href="#">Read review</a>
+													</div>
+												</div>
+												<div class="casino__bonus-desc">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+												</div>
+											</div>
+											<div class="casino" data-fls-casino="">
+												<div class="casino__body">
+													<div class="casino__brand">
+														<a class="casino__logo" href="#">
+															<picture>
+																<img class="casino__logo-img" alt="22bet" src="./assets/img/casinos/22bet.webp">
+															</picture>
+														</a>
+														<h4 class="casino__title">
+															<a class="casino__title-link" href="#">22bet</a>
+														</h4>
+													</div>
+													<div class="casino__bonus">425% Bonus up to €1000 + 125 Free Spins</div>
+													<div class="casino__rating rating">
+														<!-- <span class="rating__label">Rating:</span> -->
+														<div class="rating__stars" data-rate="4"></div>
+														<span class="rating__value"></span>
+													</div>
+													<div class="casino__actions">
+														<form action="#" target="_blank">
+															<button class="casino__btn casino__btn--visit button button--primary" data-fls-button="" type="submit">Get bonus</button>
+														</form>
+														<a class="casino__link" href="#">Read review</a>
+													</div>
+												</div>
+												<div class="casino__bonus-desc">* Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+											</div>
+											<div class="casino" data-fls-casino="">
+												<div class="casino__body">
+													<div class="casino__brand">
+														<a class="casino__logo" href="#">
+															<picture>
+																<img class="casino__logo-img" alt="IviBet" src="./assets/img/casinos/ivibet.webp">
+															</picture>
+														</a>
+														<h4 class="casino__title">
+															<a class="casino__title-link" href="#">IviBet</a>
+														</h4>
+													</div>
+													<div class="casino__bonus">150% Bonus up to €300 + 120 Free Spins</div>
+													<div class="casino__rating rating">
+														<!-- <span class="rating__label">Rating:</span> -->
+														<div class="rating__stars" data-rate="3.5"></div>
+														<span class="rating__value"></span>
+													</div>
+													<div class="casino__actions">
+														<form action="#" target="_blank">
+															<button class="casino__btn casino__btn--visit button button--primary" data-fls-button="" type="submit">Get bonus</button>
+														</form>
+														<a class="casino__link" href="#">Read review</a>
+													</div>
+												</div>
+												<div class="casino__bonus-desc">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+								<div class="last-updated --icon-calendar-2">
+									Last updated:
+									<span></span>
+								</div>
+								<div class="slot-details">
+									<div class="slot-details__col">
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-code"></span>
+											<span class="slot-details__item-type">Developer</span>
+											<span class="slot-details__item-value">
+												<a href="#">Novomatic (Greentube)</a>
+											</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-calendar-2"></span>
+											<span class="slot-details__item-type">Release</span>
+											<span class="slot-details__item-value">March 3, 2005</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-hat"></span>
+											<span class="slot-details__item-type">Theme</span>
+											<span class="slot-details__item-value">
+												Classic, Egypt, Mythology, Adventure, Ancient civilizations,
+									Book, Pharaoh, Pyramid, Sand
+											</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-money"></span>
+											<span class="slot-details__item-type">Min/max bet</span>
+											<span class="slot-details__item-value">0,05/50</span>
+										</div>
+									</div>
+									<div class="slot-details__col">
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-grid"></span>
+											<span class="slot-details__item-type">Grid</span>
+											<span class="slot-details__item-value">5×3</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-percent-solid"></span>
+											<span class="slot-details__item-type">RTP</span>
+											<span class="slot-details__item-value">95.1%</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-border"></span>
+											<span class="slot-details__item-type">Paylines</span>
+											<span class="slot-details__item-value">10</span>
+										</div>
+										<div class="slot-details__item">
+											<span class="slot-details__item-icon --icon-chart"></span>
+											<span class="slot-details__item-type">Volatility</span>
+											<span class="slot-details__item-value">5/5</span>
+										</div>
+									</div>
+								</div>
+								<div class="text-block">
+									<h2>Discover Hidden Valleys</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum lorem vitae suscipit elementum.
+									</p>
+									<h3>Key Advantages</h3>
+									<p>
+										Aliquam erat volutpat. Sed id massa vitae elit tempor vehicula non sit amet sem.
+									</p>
+								</div>
+								<div class="proc-cons">
+									<div class="proc-cons__col proc-cons__col--proc">
+										<h4 class="proc-cons__title">Proc</h4>
+										<ul class="proc-cons__items">
+											<li class="proc-cons__item">Curabitur dignissim nunc non velit.</li>
+											<li class="proc-cons__item">Fusce ut risus sit amet nulla tempus.</li>
+											<li class="proc-cons__item">Donec tincidunt elit a mauris viverra.</li>
+											<li class="proc-cons__item">Phasellus convallis lorem sed lorem.</li>
+											<li class="proc-cons__item">Suspendisse potenti in faucibus magna.</li>
+										</ul>
+									</div>
+									<div class="proc-cons__col proc-cons__col-cons">
+										<h4 class="proc-cons__title">Cons</h4>
+										<ul class="proc-cons__items">
+											<li class="proc-cons__item">Aliquam vitae sapien in magna.</li>
+											<li class="proc-cons__item">Vivamus tristique leo at sem luctus.</li>
+											<li class="proc-cons__item">Integer accumsan justo non nisl.</li>
+											<li class="proc-cons__item">Maecenas quis urna ut velit gravida.</li>
+										</ul>
+									</div>
+								</div>
+								<div class="text-block">
+									<h2>Innovative Tech Approaches</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+							ea commodo consequat. Duis aute irure dolor in
+										<a href="#">reprehenderit</a>
+										in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+							officia deserunt mollit anim id est laborum.
+									</p>
+									<p>
+										Morbi at ante nec nisl iaculis convallis. Fusce gravida ex nec magna bibendum, vel pharetra mi interdum.
+									</p>
+								</div>
+								<div class="text-block">
+									<h2>Adventure Awaits</h2>
+									<h3>Explore the Unknown</h3>
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/screenshot_1-600.webp" type="image/webp">
+										<img alt="img" src="./assets/img/screenshot_1.webp">
+									</picture>
+									<p>
+										Praesent nec arcu et lorem volutpat facilisis. Aenean id mi vel nulla varius ultrices.
+									</p>
+									<p>Donec dignissim orci eget magna luctus, vitae viverra eros sagittis.</p>
+								</div>
+								<div class="text-block">
+									<h2>Building Better Futures</h2>
+									<p>
+										Nam facilisis turpis sed augue feugiat, nec malesuada lorem congue. Cras nec mi at neque suscipit
+							pretium.
+									</p>
+									<h3>Team & Culture</h3>
+									<p>Ut in neque ac tellus efficitur viverra. Integer a pulvinar nisl.</p>
+									<ul>
+										<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+										<li>Phasellus nec sapien sit amet nulla fermentum laoreet.</li>
+										<li>Integer vel justo nec nisi scelerisque tincidunt.</li>
+										<li>Morbi efficitur turpis a nulla tincidunt, ut egestas neque blandit.</li>
+										<li>Donec gravida velit in purus vulputate, ac luctus massa convallis.</li>
+									</ul>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+							ea commodo consequat.
+									</p>
+									<table class="payout-table">
+										<tbody class="payout-table__body">
+											<tr class="payout-table__tr">
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Book" src="./assets/img/symbols/book.webp">
+													</picture>
+													<div class="payout-table__label">Book</div>
+													<div class="payout-table__values">
+														2x: 0.20
+														<br>
+														3x: 2.00
+														<br>
+														4x: 20.00
+														<br>
+														5x: 20.00
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Researcher" src="./assets/img/symbols/researcher.webp">
+													</picture>
+													<div class="payout-table__label">Researcher</div>
+													<div class="payout-table__values">
+														2x: 0.10
+														<br>
+														3x: 1.00
+														<br>
+														4x: 10.00
+														<br>
+														5x: 50.00
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Faraon" src="./assets/img/symbols/Faraon.webp">
+													</picture>
+													<div class="payout-table__label">Faraon</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.40
+														<br>
+														4x: 4.00
+														<br>
+														5x: 20.00
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Cleopatra" src="./assets/img/symbols/Cleopatra.webp">
+													</picture>
+													<div class="payout-table__label">Cleopatra</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.30
+														<br>
+														4x: 1.00
+														<br>
+														5x: 7.50
+													</div>
+												</td>
+											</tr>
+											<tr class="payout-table__tr">
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Suckerbags" src="./assets/img/symbols/Suckerbags.webp">
+													</picture>
+													<div class="payout-table__label">Suckerbags</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.30
+														<br>
+														4x: 1.00
+														<br>
+														5x: 7.50
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="A" src="./assets/img/symbols/A.webp">
+													</picture>
+													<div class="payout-table__label">A</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.30
+														<br>
+														4x: 1.00
+														<br>
+														5x: 1.50
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="K" src="./assets/img/symbols/K.webp">
+													</picture>
+													<div class="payout-table__label">K</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.30
+														<br>
+														4x: 1.00
+														<br>
+														5x: 1.50
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="Q" src="./assets/img/symbols/Q.webp">
+													</picture>
+													<div class="payout-table__label">Q</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.25
+														<br>
+														4x: 0.75
+														<br>
+														5x: 1.00
+													</div>
+												</td>
+											</tr>
+											<tr class="payout-table__tr">
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="J" src="./assets/img/symbols/J.webp">
+													</picture>
+													<div class="payout-table__label">J</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.25
+														<br>
+														4x: 0.75
+														<br>
+														5x: 1.00
+													</div>
+												</td>
+												<td class="payout-table__td">
+													<picture>
+														<img class="payout-table__img" alt="10" src="./assets/img/symbols/10.webp">
+													</picture>
+													<div class="payout-table__label">10</div>
+													<div class="payout-table__values">
+														2x: 0.05
+														<br>
+														3x: 0.25
+														<br>
+														4x: 0.75
+														<br>
+														5x: 1.00
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+								ea commodo consequat.
+									</p>
+								</div>
+								<section class="faq">
+									<h2 class="faq__title">Faq</h2>
+									<div data-fls-spollers="" class="faq__spollers spollers">
+										<details class="spollers__item">
+											<summary class="spollers__title">What is Lorem Ipsum?</summary>
+											<div class="spollers__body">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae libero at est laoreet viverra.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">How does it work?</summary>
+											<div class="spollers__body">
+												Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">Can I use it commercially?</summary>
+											<div class="spollers__body">
+												At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.
+											</div>
+										</details>
+										<details class="spollers__item">
+											<summary class="spollers__title">Is support included?</summary>
+											<div class="spollers__body">
+												Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.
+											</div>
+										</details>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__links">
+					<div class="footer__container">
+						<div class="footer__links-wrapper">
+							<img class="footer__link-img" src="./assets/img/18.svg" alt="18+">
+							<a class="footer__link" href="#" target="_blank">
+								<img class="footer__link-img" src="./assets/img/BeGambleaware.svg" alt="BeGambleaware">
+							</a>
+							<a class="footer__link" href="#" target="_blank">
+								<img class="footer__link-img" src="./assets/img/gamcare.svg" alt="GamCare">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__container">
+						<div class="footer__bottom-top">
+							<picture>
+								<img class="footer__logo" alt="logo" src="./assets/img/logo.webp">
+							</picture>
+							<nav class="footer__nav">
+								<ul>
+									<li>
+										<a href="#">Privacy policy</a>
+									</li>
+									<li>
+										<a href="#">Terms & conditions</a>
+									</li>
+									<li>
+										<a href="#">Responsible game</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__copyright">
+							Copyright ©
+							<span>
+								<script>
+                  document.write(new Date().getFullYear())
+								</script>
+							</span>
+							| All rights reserved
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<noscript><link rel="stylesheet" crossorigin="" href="./css/style.min.css?v=1752068514739"></noscript>
+	</body>
+</html>

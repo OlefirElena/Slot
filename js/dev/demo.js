@@ -1,4 +1,5 @@
-import "./app.min.js";
+import "./app.min2.js";
+/* empty css           */
 import "./custom.min.js";
 document.addEventListener("DOMContentLoaded", function() {
   const button = document.querySelector(".game-preview__button");

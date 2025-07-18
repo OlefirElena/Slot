@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {
+  const currentUrl = window.location.href;
+  const alternateLink = document.createElement("link");
+  alternateLink.setAttribute("rel", "alternate");
+  alternateLink.setAttribute("hreflang", "de");
+  alternateLink.setAttribute("href", currentUrl);
+  document.head.appendChild(alternateLink);
+});
 document.querySelectorAll(".rating").forEach((rating) => {
   const stars = rating.querySelector(".rating__stars");
   const value = rating.querySelector(".rating__value");
